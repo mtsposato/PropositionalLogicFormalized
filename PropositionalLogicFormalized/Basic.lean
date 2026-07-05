@@ -1,1 +1,1 @@
-import PropositionalLogicFormalised.Formula
+import PropositionalLogicFormalized.Formula
