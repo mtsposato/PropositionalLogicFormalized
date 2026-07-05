@@ -1,13 +1,10 @@
 # PropositionalLogicFormalized
 
-## GitHub configuration
+This repo is provides a formalization of propositional logic in lean4.
 
-To set up your new GitHub repository, follow these steps:
+In particular, it follows the work made during the course [Logic: Advanced Course](https://onderwijsaanbod.kuleuven.be/syllabi/e/W0Q22A) at KU Leuven, which followed the textbook [Intermediate Logic](https://builds.openlogicproject.org/courses/intermediate-logic/)
 
-* Under your repository name, click **Settings**.
-* In the **Actions** section of the sidebar, click "General".
-* Check the box **Allow GitHub Actions to create and approve pull requests**.
-* Click the **Pages** section of the settings sidebar.
-* In the **Source** dropdown menu, select "GitHub Actions".
+[Logic and Mechanized Reasoning](https://github.com/avigad/lamr/blob/main/LAMR/Util/Misc.lean) has influnced the file [List.lean](./PropositionalLogicFormalized/Utils/List.lean).
 
-After following the steps above, you can remove this section from the README file.
+[Foundation](https://github.com/FormalizedFormalLogic/Foundation) has influenced the file [Lindenbaum.lean](./PropositionalLogicFormalized/Lindenbaum.lean)
+
