@@ -1,1 +1,2 @@
 import PropositionalLogicFormalized.Formula
+set_option linter.style.header false

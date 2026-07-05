@@ -12,3 +12,111 @@
   $\bot$ (falsum), propositional variables $p_n$ ($n \in \mathbb{N}$), and closed
   under negation, conjunction, disjunction, and implication.
 \end{definition}
+\begin{definition}\label{def:formula_tostr}
+  \lean{Formula.toStr}
+  \leanok
+  \uses{def:formula}
+  Pretty-printing a formula as a string.
+\end{definition}
+\begin{definition}\label{def:formula_tonat}
+  \lean{Formula.toNat}
+  \leanok
+  \uses{def:formula}
+  Encodes a formula as a natural number via Cantor pairing.
+\end{definition}
+\begin{definition}\label{def:formula_ofnat}
+  \lean{Formula.ofNat}
+  \leanok
+  \uses{def:formula}
+  Decodes a natural number back into an (optional) formula.
+\end{definition}
+
+\begin{theorem}\label{thm:formula_ofnat_tonat}
+  \lean{Formula.ofNat_toNat}
+  \leanok
+  \uses{def:formula_tonat, def:formula_ofnat}
+  Decoding after encoding recovers the original formula:
+  $\mathrm{ofNat}(\mathrm{toNat}(\varphi)) = \varphi$.
+\end{theorem}
+
+\begin{definition}\label{def:formula_encodable}
+  \lean{instEncodableFormula}
+  \leanok
+  \uses{def:formula_tonat, def:formula_ofnat, thm:formula_ofnat_tonat}
+  The \texttt{Encodable} instance for \texttt{Formula}, giving an effective
+  enumeration of all formulas.
+\end{definition}
+
+\begin{definition}\label{def:formula_syntactic_identity}
+  \lean{Formula.syntatic_identity}
+  \leanok
+  \uses{def:formula_tostr}
+  Two formulas are syntactically identical iff their string representations are equal.
+\end{definition}
+
+\begin{definition}\label{def:formula_complexity}
+  \lean{Formula.complexity}
+  \leanok
+  \uses{def:formula}
+  The structural complexity of a formula, used for induction.
+\end{definition}
+
+\begin{definition}\label{def:formula_lp}
+  \lean{Formula.LP}
+  \leanok
+  \uses{def:formula_tostr}
+  Counts left parentheses in a formula's string representation.
+\end{definition}
+
+\begin{definition}\label{def:formula_rp}
+  \lean{Formula.RP}
+  \leanok
+  \uses{def:formula_tostr}
+  Counts right parentheses in a formula's string representation.
+\end{definition}
+
+\begin{theorem}\label{thm:formula_lp_count_monotonicity}
+  \lean{Formula.LP.count_monotonicity}
+  \leanok
+  \uses{def:formula_lp}
+  Left-parenthesis count distributes over list cons:
+  $\mathrm{count}(h::t) = \mathrm{count}([h]) + \mathrm{count}(t)$.
+\end{theorem}
+
+\begin{theorem}\label{thm:formula_rp_count_monotonicity}
+  \lean{Formula.RP.count_monotonicity}
+  \leanok
+  \uses{def:formula_rp}
+  Right-parenthesis count distributes over list cons.
+\end{theorem}
+
+\begin{theorem}\label{thm:formula_lp_count_append_monotonicity}
+  \lean{Formula.LP.count_append_monotonicity}
+  \leanok
+  \uses{thm:formula_lp_count_monotonicity}
+  Left-parenthesis count distributes over list append:
+  $\mathrm{count}(h \mathbin{+\!\!+} t) = \mathrm{count}(h) + \mathrm{count}(t)$.
+\end{theorem}
+
+\begin{theorem}\label{thm:formula_rp_count_append_monotonicity}
+  \lean{Formula.RP.count_append_monotonicity}
+  \leanok
+  \uses{thm:formula_rp_count_monotonicity}
+  Right-parenthesis count distributes over list append.
+\end{theorem}
+
+\begin{definition}\label{def:formula_uniformsub}
+  \lean{Formula.uniformSub}
+  \leanok
+  \uses{def:formula}
+  Uniform substitution: replaces every occurrence of variable $n$ by variable $n'$
+  throughout a formula.
+\end{definition}
+
+\begin{axiom}\label{ax:dne_elim}
+  \lean{dne_elim}
+  \leanok
+  \uses{def:formula}
+  Double negation identity: $\varphi = \neg\neg\varphi$, assumed as an axiom
+  rather than derived syntactically.
+\end{axiom}
