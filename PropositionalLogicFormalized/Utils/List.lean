@@ -1,3 +1,8 @@
+/-
+This file is an extention of
+https://github.com/avigad/lamr/blob/06907e8513fbebdcd8422925e7203ef58ca17d78/LAMR/Util/Misc.lean
+-/
+
 import Lean
 open Lean
 
