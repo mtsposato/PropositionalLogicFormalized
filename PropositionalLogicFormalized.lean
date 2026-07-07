@@ -1,1 +1,12 @@
 import PropositionalLogicFormalized.Basic
+import PropositionalLogicFormalized.Boolean
+import PropositionalLogicFormalized.Complete
+import PropositionalLogicFormalized.DepGraph
+import PropositionalLogicFormalized.Formula
+import PropositionalLogicFormalized.FormulaSet
+import PropositionalLogicFormalized.Lindenbaum
+import PropositionalLogicFormalized.Proof
+import PropositionalLogicFormalized.Prop
+import PropositionalLogicFormalized.ProperInitialSegment
+import PropositionalLogicFormalized.Semantics
+import PropositionalLogicFormalized.Utils.List
